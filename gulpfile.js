@@ -5,7 +5,6 @@ var browser    = require('browser-sync');
 var gulp       = require('gulp');
 var jeet       = require('jeet');
 var kouto      = require('kouto-swiss');
-var livereload = require('gulp-livereload');
 var plumber    = require('gulp-plumber');
 var rename     = require('gulp-rename');
 var rupture    = require('rupture');
@@ -29,7 +28,7 @@ gulp.task('reload', function() {
 gulp.task('server', function() {
   browser({
     server: {
-      baseDir: './www/'
+      baseDir: './public/'
     },
     port: 4000
   });
@@ -42,7 +41,7 @@ gulp.task('server', function() {
  */
 gulp.task('stylus', function() {
   return gulp
-    .src('./www/styl/main.styl')
+    .src('./front/styl/main.styl')
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(stylus({
@@ -51,7 +50,7 @@ gulp.task('stylus', function() {
     }))
     .pipe(sourcemaps.write())
     .pipe(rename('styles.css'))
-    .pipe(gulp.dest('./www/css'))
+    .pipe(gulp.dest('./public/assets/css'))
     .pipe(browser.reload({stream: true}));
 });
 
@@ -61,8 +60,8 @@ gulp.task('stylus', function() {
  * Watch for changes and reapply tasks
  */
 gulp.task('watch', function() {
-  gulp.watch('./www/styl/**/*.styl', ['stylus']);
-  gulp.watch('./www/**.html', ['reload']);
+  gulp.watch('./front/styl/**/*.styl', ['stylus']);
+  gulp.watch('./public/**.html', ['reload']);
 });
 
 /**
