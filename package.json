@@ -1,0 +1,29 @@
+{
+  "name": "pagar-me",
+  "version": "1.0.0",
+  "description": "Implementation of the pagar.me blog design.",
+  "main": "gulpfile.js",
+  "private": true,
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "pagar.me",
+    "blog",
+    "responsive"
+  ],
+  "author": "Guilherme Rv Coelho <guilhermervcoelho@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://grvcoelho.github.io/pagar-me",
+  "devDependencies": {
+    "browser-sync": "^2.7.0",
+    "gulp": "^3.8.11",
+    "gulp-plumber": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-stylus": "^2.0.1",
+    "jeet": "^6.1.2",
+    "kouto-swiss": "^0.11.11",
+    "rupture": "^0.6.1"
+  }
+}
