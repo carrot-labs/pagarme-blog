@@ -1,5 +1,7 @@
 # Created by https://www.gitignore.io
 
+www/css
+
 ### Bower ###
 bower_components
 .bower-cache
