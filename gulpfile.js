@@ -3,6 +3,7 @@
  */
 var browser    = require('browser-sync');
 var gulp       = require('gulp');
+var imagemin   = require('gulp-imagemin');
 var jeet       = require('jeet');
 var kouto      = require('kouto-swiss');
 var plumber    = require('gulp-plumber');
@@ -10,6 +11,21 @@ var rename     = require('gulp-rename');
 var rupture    = require('rupture');
 var sourcemaps = require('gulp-sourcemaps');
 var stylus     = require('gulp-stylus');
+
+/**
+ * Imagemin task
+ *
+ * Minify and optimize images
+ */
+gulp.task('imagemin', function() {
+  return gulp
+    .src('front/img/**/*')
+    .pipe(plumber())
+    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+    .pipe(gulp.dest('public/assets/img'))
+    .pipe(browser.reload({stream: true}));
+});
+
 
 /**
  * Reload task
@@ -61,10 +77,11 @@ gulp.task('stylus', function() {
  */
 gulp.task('watch', function() {
   gulp.watch('./front/styl/**/*.styl', ['stylus']);
+  gulp.watch('./front/img/**/*', ['imagemin']);
   gulp.watch('./public/**.html', ['reload']);
 });
 
 /**
  * Default task
  */
-gulp.task('default', ['server', 'stylus', 'watch']);
+gulp.task('default', ['server', 'imagemin', 'stylus', 'watch']);
