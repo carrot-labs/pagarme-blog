@@ -1,5 +1,6 @@
 $navbar-background = #484848
 $navbar-color = #959595
+$navbar-font-size = 0.875rem
 
 .navbar
   @extend .cf
@@ -19,11 +20,21 @@ $navbar-color = #959595
     text-transform uppercase
     font-style italic
     font-size 1.2rem
+    display flex
+    align-items center
+
+    strong
+      margin-right .3rem
+
+  &__brand__logo
+    width 2.75rem
+    margin-right 1rem
 
   &__separator
     width 0.125rem
     height 2.6rem
-    background rgba(0,0,0,.4)
+    margin 0 2rem
+    background rgba(0,0,0,.25)
 
   &__menu
     ul
@@ -32,3 +43,43 @@ $navbar-color = #959595
       list-style none
     li
       display inline-block
+      padding-right 1.3rem
+    a
+      text-decoration none
+      color $navbar-color
+      font-size $navbar-font-size
+      transition all $transition-bezier
+      &:hover
+        color darken($navbar-color, 15%)
+        transition all $transition-bezier
+
+  &__newsletter
+    margin-left auto
+    font-size $navbar-font-size
+    input
+      position relative
+      left 4px
+      padding .3rem 1rem
+      line-height $line-height-base
+      background transparent
+      border 1px solid rgba(#959595, .7)
+      border-right-color transparent
+      border-top-left-radius .2rem
+      border-bottom-left-radius .2rem
+      &:focus
+        outline 0
+    button
+      background transparent
+      border 1px solid white
+      padding .3rem 1rem
+      text-transform uppercase
+      font-style italic
+      font-weight 600
+      color white
+      transition all $transition-bezier
+      &:hover
+        background white
+        color $black-text
+        transition all $transition-bezier
+      &:focus
+        outline 0

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <link rel="shortcut icon" href="favicon.png">
+  <link rel="shortcut icon" href="assets/img/favicon.png">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,200italic,300italic,400italic,600,600italic,700,700italic,900">
 </head>
@@ -12,6 +12,7 @@
   <div class="navbar">
     <div class="navbar__inner">
       <div class="navbar__brand">
+        <img class="navbar__brand__logo" src="assets/img/logo.png">
         <strong>Blog</strong> Pagar.me
       </div>
 
@@ -19,11 +20,16 @@
 
       <div class="navbar__menu">
         <ul>
-          <li>Preços</li>
-          <li>Checkout</li>
-          <li>Clientes</li>
-          <li>Contato</li>
+          <li><a href="#">Preços</a></li>
+          <li><a href="#">Checkout</a></li>
+          <li><a href="#">Clientes</a></li>
+          <li><a href="#">Contato</a></li>
         </ul>
+      </div>
+
+      <div class="navbar__newsletter">
+        <input type="text" autocomplete="off" name="name" placeholder="Digite seu e-mail e assine">
+        <button type="submit" name="button">Assinar</button>
       </div>
     </div>
   </div>
