@@ -1,6 +1,5 @@
 $navbar-background = #484848
-$navbar-color = #959595
-$navbar-font-size = 0.875rem
+$navbar-color = #a4a4a4
 
 .navbar
   @extend .cf
@@ -10,8 +9,8 @@ $navbar-font-size = 0.875rem
 
   &__inner
     @extend .container
-    padding-top 1.4rem
-    padding-bottom 1.4rem
+    padding-top rem(27px)
+    padding-bottom rem(27px)
     display flex
     flex-direction row
     align-items center
@@ -19,7 +18,7 @@ $navbar-font-size = 0.875rem
   &__brand
     text-transform uppercase
     font-style italic
-    font-size 1.2rem
+    font-size 1.375rem
     display flex
     align-items center
 
@@ -27,14 +26,14 @@ $navbar-font-size = 0.875rem
       margin-right .3rem
 
   &__brand__logo
-    width 2.75rem
+    width 2.875rem
     margin-right 1rem
 
   &__separator
-    width 0.125rem
-    height 2.6rem
+    width rem(1px)
+    height rem(56px)
     margin 0 2rem
-    background rgba(0,0,0,.25)
+    background rgba(0,0,0,.49)
 
   &__menu
     ul
@@ -47,39 +46,50 @@ $navbar-font-size = 0.875rem
     a
       text-decoration none
       color $navbar-color
-      font-size $navbar-font-size
-      transition all $transition-bezier
+      font-size 1rem
+      transition all .4s $transition-bezier
       &:hover
         color darken($navbar-color, 15%)
-        transition all $transition-bezier
+        transition all .4s $transition-bezier
 
   &__newsletter
     margin-left auto
-    font-size $navbar-font-size
+    font-size 1rem
     input
+      width 280px
       position relative
       left 4px
-      padding .3rem 1rem
-      line-height $line-height-base
+      padding rem(7px) rem(20px)
       background transparent
-      border 1px solid rgba(#959595, .7)
+      border 1px solid rgba(#e5e5e5, .3)
       border-right-color transparent
-      border-top-left-radius .2rem
-      border-bottom-left-radius .2rem
+      border-top-left-radius rem(2px)
+      border-bottom-left-radius rem(2px)
+      font-size rem(15px)
+      line-height $line-height-base
       &:focus
         outline 0
+        box-shadow 0px 0px 2px rgba(#b2b2b2, .2)
+        border-color #b2b2b2
     button
+      padding rem(8.5px) 1rem
       background transparent
-      border 1px solid white
-      padding .3rem 1rem
+      border 1px solid #b2b2b2
+      border-radius rem(2px)
       text-transform uppercase
+      font-size rem(14px)
       font-style italic
       font-weight 600
       color white
-      transition all $transition-bezier
+      transition all .28s $transition-bezier
       &:hover
         background white
+        border-color white
         color $black-text
-        transition all $transition-bezier
+        transition all .28s $transition-bezier
       &:focus
         outline 0
+    i 
+      position relative
+      left 4px
+
