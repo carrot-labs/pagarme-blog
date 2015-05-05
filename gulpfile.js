@@ -2,6 +2,7 @@
  * Gulp dependencies
  */
 var browser    = require('browser-sync');
+var ghPages    = require('gulp-gh-pages');
 var gulp       = require('gulp');
 var imagemin   = require('gulp-imagemin');
 var jeet       = require('jeet');
@@ -11,6 +12,18 @@ var rename     = require('gulp-rename');
 var rupture    = require('rupture');
 var sourcemaps = require('gulp-sourcemaps');
 var stylus     = require('gulp-stylus');
+
+/**
+ * Deploy task
+ *
+ * Deploy the site to github pages
+ */
+gulp.task('deploy', function() {
+  return gulp
+    .src("./public/**/*")
+    .pipe(ghPages());
+});
+
 
 /**
  * Imagemin task
