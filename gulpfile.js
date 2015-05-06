@@ -60,11 +60,11 @@ gulp.task('scripts', function() {
     'home.js'
   ];
 
-  gulp
+  return gulp
     .src(files)
     .pipe(concat('scripts.js'))
     // .pipe(uglify())
-    .reload({stream: true})
+    .pipe(browser.reload({stream: true}))
     .pipe(gulp.dest('public/assets/js'));
 });
 
@@ -117,4 +117,4 @@ gulp.task('watch', function() {
 /**
  * Default task
  */
-gulp.task('default', ['server', 'imagemin', 'stylus', 'watch']);
+gulp.task('default', ['server', 'imagemin', 'scripts', 'stylus', 'watch']);
