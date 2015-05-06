@@ -2,28 +2,28 @@
   @extend .container
   padding rem(30px) rem(10px)
 
-.topics__list
-  list-style none
-  margin 0
-  
-.topics__item
-  padding-right rem(15px)
-  display inline-block
-  font-weight 600
-  font-style italic
-  font-size rem(15px)
-  text-transform uppercase
-  color #9b9b9b
-  transition all .4s $transition-bezier
-  &:hover
-    cursor pointer
-    color darken(#9b9b9b, 100%)
+  &__list
+    list-style none
+    margin 0
+    
+  &__item
+    padding-right rem(15px)
+    display inline-block
+    font-weight 600
+    font-style italic
+    font-size rem(15px)
+    text-transform uppercase
+    color #9b9b9b
     transition all .4s $transition-bezier
-  &:last-child
-    padding-right 0
+    &:hover
+      cursor pointer
+      color darken(#9b9b9b, 100%)
+      transition all .4s $transition-bezier
+    &:last-child
+      padding-right 0
 
-.topics__item--active
-  @extend .topics__item
-  color #000000
-  transition all .4s $transition-bezier
+    &--active
+      @extend .topics__item
+      color #000000
+      transition all .4s $transition-bezier
 

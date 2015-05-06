@@ -1,32 +1,12 @@
 $post-thumb-height = 265px
 
-@keyframes bounceUpIn
-  0%
-    transform translateY(100%)
-  60%
-    transform translateY(0%)
-  80%
-    transform translateY(1%)
-  100%
-    transform translateY(0%)
-
-@keyframes bounceUpOut
-  0%
-    transform translateY(0%)
-    opacity 1
-  80%
-    transform translateY(100%)
-  100%
-    transform translateY(100%)
-    opacity 0
-
-
 .post-thumb
   width 100%
   height $post-thumb-height
   position relative
   display 
   overflow hidden
+  background-color rgba($primary, .7)
   background-position 50%
   background-repeat no-repeat
   background-size cover
@@ -49,116 +29,98 @@ $post-thumb-height = 265px
       transition all .28s $transition-bezier
       animation bounceUpIn .4s $transition-bezier
 
-&.post-thumb--tall
-  @extend .post-thumb
-  height $post-thumb-height * 2      
+  &--tall
+    @extend .post-thumb
+    height $post-thumb-height * 2      
 
-
-    
-.post-thumb__image
-  opacity 1
-  z-index 10
-  background blue
-  img
-    opacity 0
-    max-width 100%
-    width 100%
+ 
+  &__info
     position absolute
-    top 0
+    padding rem(15px) 0 rem(20px) rem(30px)
     bottom 0
-    object-fit cover
+    z-index 20
+    transition all .4s $transition-bezier
+    
+  &__category
+    margin-bottom rem(6px)
+    text-transform uppercase
+    font-size rem(12px)
+    font-style italic
+    font-weight 700
+    color $primary
+    &--light
+      @extend .post-thumb__category
+      color white
+      
+  &__title
+    width calc(100% - 20px)
+    float left
+    font-size rem(21px)
+    line-height rem(25px)
+    color white
+    &--block
+      @extend .post-thumb__title
+      float none
+    
+  &__read-more
+    background red
+    position absolute
+    right 0
+    bottom rem(20px)
+    float right
+    padding rem(4px) rem(10px)
+    display inline-block
+    background $primary
+    border-top-left-radius 7px
+    border-bottom-left-radius 7px
+    font-size rem(12px)
+    font-style italic
+    text-transform uppercase
+    color white  
+    
+  &__card
+    width 100%
+    height 100%
+    position absolute
+    z-index 40
+    opacity 0
+    font-size rem(14px)
+    font-weight 300
+    color white
+    transition all .28s $transition-bezier
+    animation bounceUpOut .4s $transition-bezier
   
-.post-thumb__info
-  position absolute
-  padding rem(15px) 0 rem(20px) rem(30px)
-  bottom 0
-  z-index 20
-  transition all .28s $transition-bezier
-  
-
-.post-thumb__card
-  width 100%
-  height 100%
-  position absolute
-  z-index 40
-  opacity 0
-  font-size rem(14px)
-  font-weight 300
-  color white
-  transition all .28s $transition-bezier
-  animation bounceUpOut .4s $transition-bezier
-  
-
-.post-thumb__category
-  margin-bottom rem(6px)
-  text-transform uppercase
-  font-size rem(12px)
-  font-style italic
-  font-weight 700
-  color $primary
-  
-.post-thumb__category--light
-  @extend .post-thumb__category
-  color white
-  
-.post-thumb__backdrop
-  width 100%
-  height 100%
-  position absolute
-  background $primary
-  opacity .80
-  z-index 30
-  
-.post-thumb__card__info
-  @extend .post-thumb__info
-  padding-right rem(30px)
-  position absolute
-  z-index 40
-  
-.post-thumb__card__description
-  width 100%
-  display inline-block
-  
-.post-thumb__card__separator
-  width 100%
-  height 1px
-  background rgba(255, 255, 255, .2)
-  margin rem(20px) 0
-  
-.post-thumb__card__read-more
-  padding rem(15px) rem(30px)
-  position absolute
-  z-index 40
-  right 0
-  font-size rem(17px)
-  font-style italic
-  text-transform uppercase
-  i
-    margin-left rem(5px)
-
-.post-thumb__title
-  width calc(100% - 20px)
-  float left
-  font-size rem(21px)
-  line-height rem(25px)
-  color white
-  
-.post-thumb__title--block
-  @extend .post-thumb__title
-  float none
-  
-.post-thumb__read-more
-  background red
-  position absolute
-  right 0
-  bottom rem(20px)
-  float right
-  padding rem(4px) rem(10px)
-  display inline-block
-  background $primary
-  border-top-left-radius 7px
-  border-bottom-left-radius 7px
-  font-size rem(12px)
-  font-style italic
-  text-transform uppercase
-  color white
+    &__backdrop
+      width 100%
+      height 100%
+      position absolute
+      background $primary
+      opacity .80
+      z-index 30
+      
+    &__info
+      @extend .post-thumb__info
+      padding-right rem(30px)
+      position absolute
+      z-index 40
+      
+    &__description
+      width 100%
+      display inline-block
+      
+    &__separator
+      width 100%
+      height 1px
+      background rgba(255, 255, 255, .2)
+      margin rem(20px) 0
+      
+    &__read-more
+      padding rem(15px) rem(30px)
+      position absolute
+      z-index 40
+      right 0
+      font-size rem(17px)
+      font-style italic
+      text-transform uppercase
+      i
+        margin-left rem(5px)
