@@ -2,6 +2,7 @@
  * Gulp dependencies
  */
 var browser    = require('browser-sync');
+var concat     = require('gulp-concat');
 var ghPages    = require('gulp-gh-pages');
 var gulp       = require('gulp');
 var imagemin   = require('gulp-imagemin');
@@ -12,6 +13,7 @@ var rename     = require('gulp-rename');
 var rupture    = require('rupture');
 var sourcemaps = require('gulp-sourcemaps');
 var stylus     = require('gulp-stylus');
+var uglify     = require('gulp-uglify');
 
 /**
  * Deploy task
@@ -23,7 +25,6 @@ gulp.task('deploy', function() {
     .src("./public/**/*")
     .pipe(ghPages());
 });
-
 
 /**
  * Imagemin task
@@ -39,7 +40,6 @@ gulp.task('imagemin', function() {
     .pipe(browser.reload({stream: true}));
 });
 
-
 /**
  * Reload task
  *
@@ -47,6 +47,19 @@ gulp.task('imagemin', function() {
  */
 gulp.task('reload', function() {
   browser.reload();
+});
+
+/**
+ * Scripts task
+ *
+ * Concat and minify all javascript code
+ */
+gulp.task('scripts', function() {
+  gulp
+      .src('front/js/**/*.js')
+      .pipe(concat('scripts.js'))
+      .pipe(uglify())
+      .pipe(gulp.dest('public/assets/js'));
 });
 
 /**
@@ -90,6 +103,7 @@ gulp.task('stylus', function() {
  */
 gulp.task('watch', function() {
   gulp.watch('./front/styl/**/*.styl', ['stylus']);
+  gulp.watch('./front/js/**/*.js', ['scripts']);
   gulp.watch('./front/img/**/*', ['imagemin']);
   gulp.watch('./public/**.html', ['reload']);
 });
