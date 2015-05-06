@@ -56,16 +56,16 @@ gulp.task('reload', function() {
  */
 gulp.task('scripts', function() {
   var files = [
-    'lib/**/*.js',
-    'home.js'
+    'front/js/lib/**/*.js',
+    'front/js/home.js'
   ];
 
   return gulp
     .src(files)
     .pipe(concat('scripts.js'))
     // .pipe(uglify())
-    .pipe(browser.reload({stream: true}))
-    .pipe(gulp.dest('public/assets/js'));
+    .pipe(gulp.dest('public/assets/js'))
+    .pipe(browser.reload({stream: true}));
 });
 
 /**
