@@ -1,3 +1,5 @@
+$post-thumb-height = 265px
+
 @keyframes bounceUpIn
   0%
     transform translateY(100%)
@@ -20,11 +22,22 @@
 
 
 .post-thumb
-  margin 30px auto 300px // !temp
-  width 380px
-  height 530px
+  width 100%
+  height $post-thumb-height
   position relative
+  display 
   overflow hidden
+  background-position 50%
+  background-repeat no-repeat
+  background-size cover
+  // Fix bug with columns and transitions
+  -webkit-column-break-inside avoid
+  -moz-column-break-inside avoid
+  -o-column-break-inside avoid
+  -ms-column-break-inside avoid
+  column-break-inside avoid
+  -webkit-backface-visibility hidden
+  
   &:hover
     .post-thumb__info
       transition all .28s $transition-bezier
@@ -32,19 +45,28 @@
 
     .post-thumb__card
       opacity 1
-      transform translateY(0)
+      z-index 90
       transition all .28s $transition-bezier
       animation bounceUpIn .4s $transition-bezier
+
+&.post-thumb--tall
+  @extend .post-thumb
+  height $post-thumb-height * 2      
+
+
     
 .post-thumb__image
   opacity 1
   z-index 10
+  background blue
   img
+    opacity 0
     max-width 100%
     width 100%
     position absolute
     top 0
     bottom 0
+    object-fit cover
   
 .post-thumb__info
   position absolute
@@ -58,7 +80,7 @@
   width 100%
   height 100%
   position absolute
-  z-index 30
+  z-index 40
   opacity 0
   font-size rem(14px)
   font-weight 300
