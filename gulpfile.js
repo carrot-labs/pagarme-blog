@@ -55,11 +55,17 @@ gulp.task('reload', function() {
  * Concat and minify all javascript code
  */
 gulp.task('scripts', function() {
+  var files = [
+    'lib/**/*.js',
+    'home.js'
+  ];
+
   gulp
-      .src('front/js/**/*.js')
-      .pipe(concat('scripts.js'))
-      .pipe(uglify())
-      .pipe(gulp.dest('public/assets/js'));
+    .src(files)
+    .pipe(concat('scripts.js'))
+    .pipe(uglify())
+    .reload({stream: true})
+    .pipe(gulp.dest('public/assets/js'));
 });
 
 /**
