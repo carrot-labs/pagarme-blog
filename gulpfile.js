@@ -63,7 +63,7 @@ gulp.task('scripts', function() {
   gulp
     .src(files)
     .pipe(concat('scripts.js'))
-    .pipe(uglify())
+    // .pipe(uglify())
     .reload({stream: true})
     .pipe(gulp.dest('public/assets/js'));
 });
