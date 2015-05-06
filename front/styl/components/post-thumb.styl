@@ -7,6 +7,7 @@ $post-thumb-height = 265px
   display 
   overflow hidden
   background-color rgba($primary, .7)
+  background-image url(../img/post-thumb-default.jpg)
   background-position 50%
   background-repeat no-repeat
   background-size cover
@@ -24,6 +25,7 @@ $post-thumb-height = 265px
       opacity 0
 
     .post-thumb__card
+      display block
       opacity 1
       z-index 90
       transition all .28s $transition-bezier
@@ -84,6 +86,7 @@ $post-thumb-height = 265px
     position absolute
     z-index 40
     opacity 0
+    display none
     font-size rem(14px)
     font-weight 300
     color white
