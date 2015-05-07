@@ -1,15 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Blog | Pagar.me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Favicon -->
   <link rel="shortcut icon" href="assets/img/favicon.png">
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,200italic,300italic,400italic,600,600italic,700,700italic,900">
+  <!-- Styles and vendor -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- Webfonts -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,200italic,300italic,400italic,600,600italic,700,700italic,900">
 </head>
 
 <body>
+
+  <!--[if lt IE 9]>
+      <p class="browser-upgrade">Você está utilizando um navegador <strong>desatualizado e inseguro.</strong>. Por favor <a href="http://browsehappy.com/">atualize seu navegador</a> para melhorar sua experiência.</p>
+  <![endif]-->
 
   <nav class="navbar">
     <div class="navbar__inner">
@@ -30,8 +39,10 @@
       </div>
 
       <div class="navbar__newsletter">
-        <input type="text" autocomplete="off" name="name" placeholder="Digite seu e-mail e assine">
-        <button type="submit" name="button">Assinar <i class="fa fa-envelope"></i></button>
+        <form>
+          <input type="email" autocomplete="off" name="email" placeholder="Digite seu e-mail e assine">
+          <button type="submit" name="button">Assinar <i class="fa fa-envelope"></i></button>
+        </form>
       </div>
 
       <div id="navbar-toggle" class="navbar__toggle">
@@ -77,6 +88,15 @@
       <li class="topics__item">Marketplace</li>
       <li class="topics__item">Empreendedorismo</li>
     </ul>
+
+    <div class="topics__search-box">
+      <form>
+        <button type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+        <input type="text" autocomplete="off" name="search" placeholder="Buscar no blog">
+      </form>
+    </div>
   </div>
 
   <div class="post-thumb-list">
@@ -591,66 +611,5 @@
   </div>
 
   <script src="assets/js/scripts.js"></script>
-  <script>
-  /*
-  function domReady(fn) {
-    if (document.readyState != 'loading'){
-      fn();
-    } else {
-      document.addEventListener('DOMContentLoaded', fn);
-    }
-  }
-
-  function addClass(elem, className) {
-    if(elem.classList) {
-      elem.classList.add(className);
-    } else {
-      elem.className += ' ' + className;
-    }
-  }
-
-  function hasClass(elem, className) {
-    if (elem.classList) {
-      return elem.classList.contains(className);
-    } else {
-      return new RegExp('(^| )' + className + '( |$)', 'gi').test(elem.className);
-    }
-  }
-
-  function removeClass(elem, className) {
-    if(elem.classList) {
-      elem.classList.remove(className);
-    } else {
-      elem.className = elem.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-    }
-  }
-
-  domReady(function(arguments) {
-    var body = document.querySelector('body');
-    var navbarToggle = document.querySelector('#navbar-toggle');
-    var responsiveMenu = document.querySelector('#responsive-menu');
-
-    navbarToggle.addEventListener('click', function(e) {
-      if(!hasClass(navbarToggle, 'navbar__toggle--active')) {
-        addClass(navbarToggle, 'navbar__toggle--active')
-        removeClass(navbarToggle, 'navbar__toggle')
-
-        addClass(body, 'no-scrolling');
-
-        addClass(responsiveMenu, 'navbar__responsive-menu--open');
-        removeClass(responsiveMenu, 'navbar__responsive-menu');
-      } else {
-        addClass(navbarToggle, 'navbar__toggle')
-        removeClass(navbarToggle, 'navbar__toggle--active')
-        removeClass(body, 'no-scrolling');
-
-        addClass(responsiveMenu, 'navbar__responsive-menu');
-        removeClass(responsiveMenu, 'navbar__responsive-menu--open');
-      }
-    });
-  });
-
-  */
-  </script>
 </body>
 </html>
