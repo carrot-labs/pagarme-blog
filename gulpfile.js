@@ -56,6 +56,7 @@ gulp.task('reload', function() {
  */
 gulp.task('scripts', function() {
   var files = [
+    'front/js/vendor/**/*.js',
     'front/js/lib/**/*.js',
     'front/js/home.js'
   ];
