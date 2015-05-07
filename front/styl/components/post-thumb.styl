@@ -2,7 +2,7 @@ $post-thumb-height = 265px
 
 .post-thumb
   width 100%
-  height $post-thumb-height
+  height $post-thumb-height * 1.2
   position relative
   display
   overflow hidden
@@ -18,10 +18,12 @@ $post-thumb-height = 265px
   -ms-column-break-inside avoid
   column-break-inside avoid
   -webkit-backface-visibility hidden
+  +above('md')
+    height $post-thumb-height
 
   &:hover
     cursor pointer
-    
+
     .post-thumb__info
       transition all .28s $transition-bezier
       opacity 0
@@ -35,7 +37,8 @@ $post-thumb-height = 265px
 
   &--tall
     @extend .post-thumb
-    height $post-thumb-height * 2
+    +above('md')
+      height $post-thumb-height * 2
 
 
   &__info
