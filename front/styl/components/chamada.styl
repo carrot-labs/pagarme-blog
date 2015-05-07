@@ -5,21 +5,23 @@
 
   &__inner
     @extend.container
-    padding rem(100px) rem(85px)  
-    
+    padding rem(100px) rem(15px)
+    +above('lg')
+      padding rem(100px) rem(85px)
+
   &__category
     font-size rem(17px)
     font-style italic
     text-transform uppercase
     color rgba(white, .2)
-    
+
   &__title
     margin 0
     line-height rem(46px)
     font-size rem(45px)
     font-weight 600
     color white
-    
+
   &__read-more
     padding rem(5px) rem(10px)
     display inline-block
@@ -33,4 +35,3 @@
     text-transform uppercase
     color $primary
     transition all .28s $transition-bezier
-    
