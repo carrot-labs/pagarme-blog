@@ -1,6 +1,8 @@
 .topics
   @extend .container
   padding rem(30px) rem(10px)
+  display flex
+  flex-direction row
 
   &__list
     list-style none
@@ -26,4 +28,20 @@
       @extend .topics__item
       color #000000
       transition all .4s $transition-bezier
-
+  
+  &__search-box
+    margin-left auto
+    display none
+    +above('lg')
+      display block
+    input
+      background transparent
+      border 0
+      font-size rem(15px)
+      &:focus
+        outline 0 
+    button
+      background transparent
+      border none
+      &:focus
+        ouline 0

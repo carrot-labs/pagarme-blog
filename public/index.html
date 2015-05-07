@@ -30,8 +30,10 @@
       </div>
 
       <div class="navbar__newsletter">
-        <input type="text" autocomplete="off" name="name" placeholder="Digite seu e-mail e assine">
-        <button type="submit" name="button">Assinar <i class="fa fa-envelope"></i></button>
+        <form>
+          <input type="email" autocomplete="off" name="email" placeholder="Digite seu e-mail e assine">
+          <button type="submit" name="button">Assinar <i class="fa fa-envelope"></i></button>
+        </form>
       </div>
 
       <div id="navbar-toggle" class="navbar__toggle">
@@ -77,6 +79,15 @@
       <li class="topics__item">Marketplace</li>
       <li class="topics__item">Empreendedorismo</li>
     </ul>
+
+    <div class="topics__search-box">
+      <form>
+        <button type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+        <input type="text" autocomplete="off" name="search" placeholder="Buscar no blog">
+      </form>
+    </div>
   </div>
 
   <div class="post-thumb-list">
@@ -591,66 +602,5 @@
   </div>
 
   <script src="assets/js/scripts.js"></script>
-  <script>
-  /*
-  function domReady(fn) {
-    if (document.readyState != 'loading'){
-      fn();
-    } else {
-      document.addEventListener('DOMContentLoaded', fn);
-    }
-  }
-
-  function addClass(elem, className) {
-    if(elem.classList) {
-      elem.classList.add(className);
-    } else {
-      elem.className += ' ' + className;
-    }
-  }
-
-  function hasClass(elem, className) {
-    if (elem.classList) {
-      return elem.classList.contains(className);
-    } else {
-      return new RegExp('(^| )' + className + '( |$)', 'gi').test(elem.className);
-    }
-  }
-
-  function removeClass(elem, className) {
-    if(elem.classList) {
-      elem.classList.remove(className);
-    } else {
-      elem.className = elem.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-    }
-  }
-
-  domReady(function(arguments) {
-    var body = document.querySelector('body');
-    var navbarToggle = document.querySelector('#navbar-toggle');
-    var responsiveMenu = document.querySelector('#responsive-menu');
-
-    navbarToggle.addEventListener('click', function(e) {
-      if(!hasClass(navbarToggle, 'navbar__toggle--active')) {
-        addClass(navbarToggle, 'navbar__toggle--active')
-        removeClass(navbarToggle, 'navbar__toggle')
-
-        addClass(body, 'no-scrolling');
-
-        addClass(responsiveMenu, 'navbar__responsive-menu--open');
-        removeClass(responsiveMenu, 'navbar__responsive-menu');
-      } else {
-        addClass(navbarToggle, 'navbar__toggle')
-        removeClass(navbarToggle, 'navbar__toggle--active')
-        removeClass(body, 'no-scrolling');
-
-        addClass(responsiveMenu, 'navbar__responsive-menu');
-        removeClass(responsiveMenu, 'navbar__responsive-menu--open');
-      }
-    });
-  });
-
-  */
-  </script>
 </body>
 </html>
