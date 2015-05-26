@@ -5,6 +5,10 @@
     var navbarToggle   = new DOM('#navbar-toggle');
     var responsiveMenu = new DOM('#responsive-menu');
 
+    /**
+     * Navbar toggle
+     */
+
     navbarToggle.addEventListener('click', function(e) {
       if(!navbarToggle.hasClass('navbar__toggle--active')) {
         // Prevent the browser from scrolling
@@ -30,6 +34,13 @@
         responsiveMenu.addClass('navbar__responsive-menu');
       }
     });
+
+    /**
+     * Masonry (grid)
+     */
+
+    var postThumbContainer = document.querySelector('.post-thumb-list');
+    new Masonry(postThumbContainer, {});
   });
 
 })(window, document);

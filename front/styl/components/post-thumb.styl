@@ -4,22 +4,20 @@ $post-thumb-height = 265px
   width 100%
   height $post-thumb-height * 1.2
   position relative
-  display
+  display block
+  float left
   overflow hidden
   background-color rgba($primary, .7)
   background-image url(../img/post-thumb-default.jpg)
   background-position 50%
   background-repeat no-repeat
   background-size cover
-  // Fix bug with columns and transitions
-  -webkit-column-break-inside avoid
-  -moz-column-break-inside avoid
-  -o-column-break-inside avoid
-  -ms-column-break-inside avoid
-  column-break-inside avoid
   -webkit-backface-visibility hidden
   +above('md')
+    width 50%
     height $post-thumb-height
+  +above('lg')
+    width 33.33333333%
 
   &:hover
     cursor pointer
@@ -42,6 +40,7 @@ $post-thumb-height = 265px
 
 
   &__info
+    width 100%
     position absolute
     padding rem(15px) 0 rem(20px) rem(30px)
     bottom 0
